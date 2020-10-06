@@ -1,0 +1,40 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  labels:
+    app.kubernetes.io/name: ipgomod
+  name: ipgomod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: ipgomod
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: ipgomod
+    spec:
+      securityContext:
+        fsGroup: 65534
+        runAsGroup: 65534
+        runAsNonRoot: true
+        runAsUser: 65534
+      terminationGracePeriodSeconds: 10
+      imagePullSecrets:
+        - name: regcred
+      containers:
+        - name: ipgomod
+          image: us.gcr.io/com-seankhliao/ipgomod:latest
+          args:
+            - -db=postgresql://ipgomod@cockroachdb.datastore.svc.cluster.local:26257/ipgomod?sslmode=verify-full&sslrootcert=/var/secret/cockroachdb/ca.crt&sslcert=/var/secret/cockroachdb/tls.crt&sslkey=/var/secret/cockroachdb/tls.key
+          volumeMounts:
+            - name: client
+              mountPath: /var/secret/cockroachdb
+      volumes:
+        - name: client
+          secret:
+            secretName: cockroachdb-client-ipgomod

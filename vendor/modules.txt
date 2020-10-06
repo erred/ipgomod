@@ -1,0 +1,364 @@
+# github.com/apache/thrift v0.13.0
+github.com/apache/thrift/lib/go/thrift
+# github.com/beorn7/perks v1.0.1
+github.com/beorn7/perks/quantile
+# github.com/btcsuite/btcd v0.20.1-beta
+github.com/btcsuite/btcd/btcec
+# github.com/cespare/xxhash/v2 v2.1.1
+github.com/cespare/xxhash/v2
+# github.com/cockroachdb/cockroach-go/v2 v2.0.8
+## explicit
+github.com/cockroachdb/cockroach-go/v2/crdb
+# github.com/crackcomm/go-gitignore v0.0.0-20170627025303-887ab5e44cc3
+github.com/crackcomm/go-gitignore
+# github.com/felixge/httpsnoop v1.0.1
+github.com/felixge/httpsnoop
+# github.com/gogo/protobuf v1.3.1
+github.com/gogo/protobuf/gogoproto
+github.com/gogo/protobuf/proto
+github.com/gogo/protobuf/protoc-gen-gogo/descriptor
+# github.com/golang/protobuf v1.4.2
+github.com/golang/protobuf/proto
+github.com/golang/protobuf/ptypes
+github.com/golang/protobuf/ptypes/any
+github.com/golang/protobuf/ptypes/duration
+github.com/golang/protobuf/ptypes/timestamp
+# github.com/google/uuid v1.1.1
+github.com/google/uuid
+# github.com/hashicorp/golang-lru v0.5.3
+github.com/hashicorp/golang-lru
+github.com/hashicorp/golang-lru/simplelru
+# github.com/ipfs/bbloom v0.0.4
+github.com/ipfs/bbloom
+# github.com/ipfs/go-block-format v0.0.2
+github.com/ipfs/go-block-format
+# github.com/ipfs/go-blockservice v0.1.0
+github.com/ipfs/go-blockservice
+# github.com/ipfs/go-cid v0.0.7
+github.com/ipfs/go-cid
+# github.com/ipfs/go-datastore v0.3.1
+github.com/ipfs/go-datastore
+github.com/ipfs/go-datastore/keytransform
+github.com/ipfs/go-datastore/namespace
+github.com/ipfs/go-datastore/query
+# github.com/ipfs/go-ipfs-blockstore v0.1.0
+github.com/ipfs/go-ipfs-blockstore
+# github.com/ipfs/go-ipfs-cmds v0.3.0
+github.com/ipfs/go-ipfs-cmds
+github.com/ipfs/go-ipfs-cmds/http
+# github.com/ipfs/go-ipfs-ds-help v0.0.1
+github.com/ipfs/go-ipfs-ds-help
+# github.com/ipfs/go-ipfs-exchange-interface v0.0.1
+github.com/ipfs/go-ipfs-exchange-interface
+# github.com/ipfs/go-ipfs-files v0.0.8
+github.com/ipfs/go-ipfs-files
+# github.com/ipfs/go-ipfs-http-client v0.1.0
+## explicit
+github.com/ipfs/go-ipfs-http-client
+# github.com/ipfs/go-ipfs-util v0.0.1
+github.com/ipfs/go-ipfs-util
+# github.com/ipfs/go-ipld-cbor v0.0.4
+github.com/ipfs/go-ipld-cbor
+github.com/ipfs/go-ipld-cbor/encoding
+# github.com/ipfs/go-ipld-format v0.2.0
+github.com/ipfs/go-ipld-format
+# github.com/ipfs/go-log v1.0.4
+github.com/ipfs/go-log
+github.com/ipfs/go-log/tracer
+github.com/ipfs/go-log/tracer/wire
+github.com/ipfs/go-log/writer
+# github.com/ipfs/go-log/v2 v2.0.5
+github.com/ipfs/go-log/v2
+# github.com/ipfs/go-merkledag v0.3.2
+github.com/ipfs/go-merkledag
+github.com/ipfs/go-merkledag/pb
+# github.com/ipfs/go-metrics-interface v0.0.1
+github.com/ipfs/go-metrics-interface
+# github.com/ipfs/go-path v0.0.7
+github.com/ipfs/go-path
+# github.com/ipfs/go-unixfs v0.2.4
+github.com/ipfs/go-unixfs
+github.com/ipfs/go-unixfs/pb
+# github.com/ipfs/go-verifcid v0.0.1
+github.com/ipfs/go-verifcid
+# github.com/ipfs/interface-go-ipfs-core v0.4.0
+## explicit
+github.com/ipfs/interface-go-ipfs-core
+github.com/ipfs/interface-go-ipfs-core/options
+github.com/ipfs/interface-go-ipfs-core/options/namesys
+github.com/ipfs/interface-go-ipfs-core/path
+# github.com/jackc/chunkreader/v2 v2.0.1
+github.com/jackc/chunkreader/v2
+# github.com/jackc/pgconn v1.7.0
+github.com/jackc/pgconn
+github.com/jackc/pgconn/internal/ctxwatch
+github.com/jackc/pgconn/stmtcache
+# github.com/jackc/pgio v1.0.0
+github.com/jackc/pgio
+# github.com/jackc/pgpassfile v1.0.0
+github.com/jackc/pgpassfile
+# github.com/jackc/pgproto3/v2 v2.0.5
+github.com/jackc/pgproto3/v2
+# github.com/jackc/pgservicefile v0.0.0-20200714003250-2b9c44734f2b
+github.com/jackc/pgservicefile
+# github.com/jackc/pgtype v1.5.0
+github.com/jackc/pgtype
+# github.com/jackc/pgx/v4 v4.9.0
+## explicit
+github.com/jackc/pgx/v4
+github.com/jackc/pgx/v4/internal/sanitize
+github.com/jackc/pgx/v4/log/zerologadapter
+github.com/jackc/pgx/v4/pgxpool
+# github.com/jackc/puddle v1.1.2
+github.com/jackc/puddle
+# github.com/jbenet/goprocess v0.1.4
+github.com/jbenet/goprocess
+# github.com/lib/pq v1.4.0
+github.com/lib/pq
+github.com/lib/pq/oid
+github.com/lib/pq/scram
+# github.com/libp2p/go-buffer-pool v0.0.2
+github.com/libp2p/go-buffer-pool
+# github.com/libp2p/go-libp2p-core v0.6.1
+github.com/libp2p/go-libp2p-core/crypto
+github.com/libp2p/go-libp2p-core/crypto/pb
+github.com/libp2p/go-libp2p-core/mux
+github.com/libp2p/go-libp2p-core/network
+github.com/libp2p/go-libp2p-core/peer
+github.com/libp2p/go-libp2p-core/peer/pb
+github.com/libp2p/go-libp2p-core/peerstore
+github.com/libp2p/go-libp2p-core/protocol
+github.com/libp2p/go-libp2p-core/record
+github.com/libp2p/go-libp2p-core/record/pb
+github.com/libp2p/go-libp2p-core/routing
+# github.com/libp2p/go-openssl v0.0.7
+github.com/libp2p/go-openssl
+github.com/libp2p/go-openssl/utils
+# github.com/matttproud/golang_protobuf_extensions v1.0.1
+github.com/matttproud/golang_protobuf_extensions/pbutil
+# github.com/minio/blake2b-simd v0.0.0-20160723061019-3f5f724cb5b1
+github.com/minio/blake2b-simd
+# github.com/minio/sha256-simd v0.1.1
+github.com/minio/sha256-simd
+# github.com/mitchellh/go-homedir v1.1.0
+github.com/mitchellh/go-homedir
+# github.com/mr-tron/base58 v1.2.0
+github.com/mr-tron/base58/base58
+# github.com/multiformats/go-base32 v0.0.3
+github.com/multiformats/go-base32
+# github.com/multiformats/go-base36 v0.1.0
+github.com/multiformats/go-base36
+# github.com/multiformats/go-multiaddr v0.3.0
+github.com/multiformats/go-multiaddr
+github.com/multiformats/go-multiaddr/net
+# github.com/multiformats/go-multiaddr-net v0.2.0
+github.com/multiformats/go-multiaddr-net
+# github.com/multiformats/go-multibase v0.0.3
+github.com/multiformats/go-multibase
+# github.com/multiformats/go-multihash v0.0.14
+github.com/multiformats/go-multihash
+# github.com/multiformats/go-varint v0.0.6
+github.com/multiformats/go-varint
+# github.com/opentracing/opentracing-go v1.1.0
+github.com/opentracing/opentracing-go
+github.com/opentracing/opentracing-go/ext
+github.com/opentracing/opentracing-go/log
+# github.com/pkg/errors v0.9.1
+github.com/pkg/errors
+# github.com/polydawn/refmt v0.0.0-20190408063855-01bf1e26dd14
+github.com/polydawn/refmt
+github.com/polydawn/refmt/cbor
+github.com/polydawn/refmt/json
+github.com/polydawn/refmt/obj
+github.com/polydawn/refmt/obj/atlas
+github.com/polydawn/refmt/pretty
+github.com/polydawn/refmt/shared
+github.com/polydawn/refmt/tok
+# github.com/prometheus/client_golang v1.7.1
+github.com/prometheus/client_golang/prometheus
+github.com/prometheus/client_golang/prometheus/internal
+github.com/prometheus/client_golang/prometheus/promauto
+github.com/prometheus/client_golang/prometheus/promhttp
+# github.com/prometheus/client_model v0.2.0
+github.com/prometheus/client_model/go
+# github.com/prometheus/common v0.10.0
+github.com/prometheus/common/expfmt
+github.com/prometheus/common/internal/bitbucket.org/ww/goautoneg
+github.com/prometheus/common/model
+# github.com/prometheus/procfs v0.1.3
+github.com/prometheus/procfs
+github.com/prometheus/procfs/internal/fs
+github.com/prometheus/procfs/internal/util
+# github.com/rs/cors v1.7.0
+github.com/rs/cors
+# github.com/rs/zerolog v1.20.0
+## explicit
+github.com/rs/zerolog
+github.com/rs/zerolog/internal/cbor
+github.com/rs/zerolog/internal/json
+# github.com/spacemonkeygo/spacelog v0.0.0-20180420211403-2296661a0572
+github.com/spacemonkeygo/spacelog
+# github.com/spaolacci/murmur3 v1.1.0
+github.com/spaolacci/murmur3
+# github.com/whyrusleeping/cbor-gen v0.0.0-20200123233031-1cdf64d27158
+github.com/whyrusleeping/cbor-gen
+# go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.12.0
+go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc
+# go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.12.0
+go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp
+# go.opentelemetry.io/contrib/propagators v0.12.0
+go.opentelemetry.io/contrib/propagators/b3
+# go.opentelemetry.io/otel v0.12.0
+go.opentelemetry.io/otel
+go.opentelemetry.io/otel/api/baggage
+go.opentelemetry.io/otel/api/global
+go.opentelemetry.io/otel/api/global/internal
+go.opentelemetry.io/otel/api/metric
+go.opentelemetry.io/otel/api/metric/registry
+go.opentelemetry.io/otel/api/propagation
+go.opentelemetry.io/otel/api/trace
+go.opentelemetry.io/otel/codes
+go.opentelemetry.io/otel/internal
+go.opentelemetry.io/otel/internal/trace/noop
+go.opentelemetry.io/otel/internal/trace/parent
+go.opentelemetry.io/otel/label
+go.opentelemetry.io/otel/propagators
+go.opentelemetry.io/otel/semconv
+go.opentelemetry.io/otel/unit
+# go.opentelemetry.io/otel/exporters/trace/jaeger v0.12.0
+go.opentelemetry.io/otel/exporters/trace/jaeger
+go.opentelemetry.io/otel/exporters/trace/jaeger/internal/gen-go/jaeger
+# go.opentelemetry.io/otel/sdk v0.12.0
+go.opentelemetry.io/otel/sdk
+go.opentelemetry.io/otel/sdk/export/trace
+go.opentelemetry.io/otel/sdk/instrumentation
+go.opentelemetry.io/otel/sdk/internal
+go.opentelemetry.io/otel/sdk/resource
+go.opentelemetry.io/otel/sdk/trace
+go.opentelemetry.io/otel/sdk/trace/internal
+# go.seankhliao.com/apis v0.0.0-20200925201609-7c5465abda54
+go.seankhliao.com/apis/saver/v1
+# go.seankhliao.com/usvc v0.8.9
+## explicit
+go.seankhliao.com/usvc
+# go.uber.org/atomic v1.6.0
+go.uber.org/atomic
+# go.uber.org/multierr v1.5.0
+go.uber.org/multierr
+# go.uber.org/zap v1.14.1
+go.uber.org/zap
+go.uber.org/zap/buffer
+go.uber.org/zap/internal/bufferpool
+go.uber.org/zap/internal/color
+go.uber.org/zap/internal/exit
+go.uber.org/zap/zapcore
+# golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9
+golang.org/x/crypto/blake2s
+golang.org/x/crypto/pbkdf2
+golang.org/x/crypto/sha3
+# golang.org/x/net v0.0.0-20200822124328-c89045814202
+golang.org/x/net/http/httpguts
+golang.org/x/net/http2
+golang.org/x/net/http2/hpack
+golang.org/x/net/idna
+golang.org/x/net/internal/timeseries
+golang.org/x/net/trace
+# golang.org/x/sync v0.0.0-20200625203802-6e8e738ad208
+golang.org/x/sync/semaphore
+# golang.org/x/sys v0.0.0-20200905004654-be1d3432aa8f
+golang.org/x/sys/cpu
+golang.org/x/sys/internal/unsafeheader
+golang.org/x/sys/unix
+golang.org/x/sys/windows
+# golang.org/x/text v0.3.3
+golang.org/x/text/cases
+golang.org/x/text/internal
+golang.org/x/text/internal/language
+golang.org/x/text/internal/language/compact
+golang.org/x/text/internal/tag
+golang.org/x/text/language
+golang.org/x/text/runes
+golang.org/x/text/secure/bidirule
+golang.org/x/text/secure/precis
+golang.org/x/text/transform
+golang.org/x/text/unicode/bidi
+golang.org/x/text/unicode/norm
+golang.org/x/text/width
+# golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1
+golang.org/x/xerrors
+golang.org/x/xerrors/internal
+# google.golang.org/api v0.32.0
+google.golang.org/api/support/bundler
+# google.golang.org/genproto v0.0.0-20200904004341-0bd0a958aa1d
+google.golang.org/genproto/googleapis/rpc/status
+# google.golang.org/grpc v1.32.0
+google.golang.org/grpc
+google.golang.org/grpc/attributes
+google.golang.org/grpc/backoff
+google.golang.org/grpc/balancer
+google.golang.org/grpc/balancer/base
+google.golang.org/grpc/balancer/grpclb/state
+google.golang.org/grpc/balancer/roundrobin
+google.golang.org/grpc/binarylog/grpc_binarylog_v1
+google.golang.org/grpc/codes
+google.golang.org/grpc/connectivity
+google.golang.org/grpc/credentials
+google.golang.org/grpc/encoding
+google.golang.org/grpc/encoding/proto
+google.golang.org/grpc/grpclog
+google.golang.org/grpc/internal
+google.golang.org/grpc/internal/backoff
+google.golang.org/grpc/internal/balancerload
+google.golang.org/grpc/internal/binarylog
+google.golang.org/grpc/internal/buffer
+google.golang.org/grpc/internal/channelz
+google.golang.org/grpc/internal/credentials
+google.golang.org/grpc/internal/envconfig
+google.golang.org/grpc/internal/grpclog
+google.golang.org/grpc/internal/grpcrand
+google.golang.org/grpc/internal/grpcsync
+google.golang.org/grpc/internal/grpcutil
+google.golang.org/grpc/internal/resolver/dns
+google.golang.org/grpc/internal/resolver/passthrough
+google.golang.org/grpc/internal/serviceconfig
+google.golang.org/grpc/internal/status
+google.golang.org/grpc/internal/syscall
+google.golang.org/grpc/internal/transport
+google.golang.org/grpc/keepalive
+google.golang.org/grpc/metadata
+google.golang.org/grpc/peer
+google.golang.org/grpc/resolver
+google.golang.org/grpc/serviceconfig
+google.golang.org/grpc/stats
+google.golang.org/grpc/status
+google.golang.org/grpc/tap
+# google.golang.org/protobuf v1.25.0
+google.golang.org/protobuf/encoding/prototext
+google.golang.org/protobuf/encoding/protowire
+google.golang.org/protobuf/internal/descfmt
+google.golang.org/protobuf/internal/descopts
+google.golang.org/protobuf/internal/detrand
+google.golang.org/protobuf/internal/encoding/defval
+google.golang.org/protobuf/internal/encoding/messageset
+google.golang.org/protobuf/internal/encoding/tag
+google.golang.org/protobuf/internal/encoding/text
+google.golang.org/protobuf/internal/errors
+google.golang.org/protobuf/internal/fieldsort
+google.golang.org/protobuf/internal/filedesc
+google.golang.org/protobuf/internal/filetype
+google.golang.org/protobuf/internal/flags
+google.golang.org/protobuf/internal/genid
+google.golang.org/protobuf/internal/impl
+google.golang.org/protobuf/internal/mapsort
+google.golang.org/protobuf/internal/pragma
+google.golang.org/protobuf/internal/set
+google.golang.org/protobuf/internal/strs
+google.golang.org/protobuf/internal/version
+google.golang.org/protobuf/proto
+google.golang.org/protobuf/reflect/protoreflect
+google.golang.org/protobuf/reflect/protoregistry
+google.golang.org/protobuf/runtime/protoiface
+google.golang.org/protobuf/runtime/protoimpl
+google.golang.org/protobuf/types/known/anypb
+google.golang.org/protobuf/types/known/durationpb
+google.golang.org/protobuf/types/known/timestamppb

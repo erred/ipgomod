@@ -14,7 +14,7 @@ import (
 )
 
 const (
-	IpfsURL       = "http://ipfs:5001"
+	IpfsURL       = "http://ipfs.datastore.svc.cluster.local:5001"
 	IndexURL      = "https://index.golang.org/index"
 	ProxyURL      = "https://proxy.golang.org"
 	ParallelLimit = 10
@@ -31,7 +31,7 @@ func run() int {
 	fs := flag.NewFlagSet(os.Args[0], flag.ExitOnError)
 	lo.Flags(fs)
 	fs.StringVar(&APIURL, "api", IpfsURL, "api endpoint")
-	fs.StringVar(&dsn, "dsn", "", "connection string for pgx")
+	fs.StringVar(&dsn, "db", "", "connection string for pgx")
 	fs.Parse(os.Args[1:])
 
 	log := lo.Logger(true)

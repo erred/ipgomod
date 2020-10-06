@@ -14,6 +14,7 @@ import (
 type DBStore struct {
 	pool *pgxpool.Pool
 	log  zerolog.Logger
+	ch   chan pgx.Batch
 }
 
 func (d *DBStore) Latest(ctx context.Context, ts string) error {
@@ -32,17 +33,20 @@ func (d *DBStore) AddFiles(ctx context.Context, fhs []FileHash) error {
 	for _, fh := range fhs {
 		b.Queue(`INSERT INTO hashes (module, version, file, cid) VALUES ($1, $2, $3, $4)`, fh.Module, fh.Version, fh.File, fh.CID)
 	}
-	err := ExecuteTx(ctx, d.pool, pgx.TxOptions{}, func(tx pgx.Tx) error {
-		_, err := tx.SendBatch(ctx, &b).Exec()
-		if err != nil {
-			return err
-		}
-		return nil
-	})
-	if err != nil {
-		return fmt.Errorf("AddFiles: %w", err)
-	}
+	d.ch <- b
 	return nil
+}
+
+func (d *DBStore) adder(ctx context.Context) {
+	for b := range d.ch {
+		err := ExecuteTx(ctx, d.pool, pgx.TxOptions{}, func(tx pgx.Tx) error {
+			_, err := tx.SendBatch(ctx, &b).Exec()
+			return err
+		})
+		if err != nil {
+			d.log.Error().Err(err).Msg("adder")
+		}
+	}
 }
 
 func (d *DBStore) Setup(ctx context.Context, dsn string) (timestamp string, err error) {
@@ -56,6 +60,9 @@ func (d *DBStore) Setup(ctx context.Context, dsn string) (timestamp string, err 
 	if err != nil {
 		return "", fmt.Errorf("dbSetup connect dsn=%s: %w", dsn, err)
 	}
+
+	d.ch = make(chan pgx.Batch)
+	go d.adder(ctx)
 
 	// ensure tables
 	err = ExecuteTx(ctx, d.pool, pgx.TxOptions{}, func(tx pgx.Tx) error {

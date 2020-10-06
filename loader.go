@@ -111,7 +111,7 @@ func (l *Loader) processIR(ctx context.Context, ir IndexRecord) {
 
 		p, err := l.api.Unixfs().Add(ctx, files.NewReaderFile(rc), options.Unixfs.Pin(true))
 		if err != nil {
-			l.log.Error().Err(err).Msg("add unixfs file")
+			l.log.Error().Err(err).Str("mod", ir.Path).Str("ver", ir.Version).Str("file", zf.Name).Msg("add unixfs file")
 			return
 		}
 		fhs = append(fhs, FileHash{
@@ -124,7 +124,7 @@ func (l *Loader) processIR(ctx context.Context, ir IndexRecord) {
 
 	err = l.store.AddFiles(ctx, fhs)
 	if err != nil {
-		l.log.Error().Err(err).Msg("save file hashes")
+		l.log.Error().Err(err).Str("mod", ir.Path).Str("ver", ir.Version).Msg("save file hashes")
 		return
 	}
 }

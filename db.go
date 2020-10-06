@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS hashes (
 		_, err = tx.Exec(ctx, `
 CREATE TABLE IF NOT EXISTS latest (
         id              INTEGER,
-        timestamp       TEXT,
+        timestamp       TEXT
 )`)
 		if err != nil {
 			return err

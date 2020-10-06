@@ -6,9 +6,6 @@ github.com/beorn7/perks/quantile
 github.com/btcsuite/btcd/btcec
 # github.com/cespare/xxhash/v2 v2.1.1
 github.com/cespare/xxhash/v2
-# github.com/cockroachdb/cockroach-go/v2 v2.0.8
-## explicit
-github.com/cockroachdb/cockroach-go/v2/crdb
 # github.com/crackcomm/go-gitignore v0.0.0-20170627025303-887ab5e44cc3
 github.com/crackcomm/go-gitignore
 # github.com/felixge/httpsnoop v1.0.1
@@ -88,36 +85,8 @@ github.com/ipfs/interface-go-ipfs-core
 github.com/ipfs/interface-go-ipfs-core/options
 github.com/ipfs/interface-go-ipfs-core/options/namesys
 github.com/ipfs/interface-go-ipfs-core/path
-# github.com/jackc/chunkreader/v2 v2.0.1
-github.com/jackc/chunkreader/v2
-# github.com/jackc/pgconn v1.7.0
-github.com/jackc/pgconn
-github.com/jackc/pgconn/internal/ctxwatch
-github.com/jackc/pgconn/stmtcache
-# github.com/jackc/pgio v1.0.0
-github.com/jackc/pgio
-# github.com/jackc/pgpassfile v1.0.0
-github.com/jackc/pgpassfile
-# github.com/jackc/pgproto3/v2 v2.0.5
-github.com/jackc/pgproto3/v2
-# github.com/jackc/pgservicefile v0.0.0-20200714003250-2b9c44734f2b
-github.com/jackc/pgservicefile
-# github.com/jackc/pgtype v1.5.0
-github.com/jackc/pgtype
-# github.com/jackc/pgx/v4 v4.9.0
-## explicit
-github.com/jackc/pgx/v4
-github.com/jackc/pgx/v4/internal/sanitize
-github.com/jackc/pgx/v4/log/zerologadapter
-github.com/jackc/pgx/v4/pgxpool
-# github.com/jackc/puddle v1.1.2
-github.com/jackc/puddle
 # github.com/jbenet/goprocess v0.1.4
 github.com/jbenet/goprocess
-# github.com/lib/pq v1.4.0
-github.com/lib/pq
-github.com/lib/pq/oid
-github.com/lib/pq/scram
 # github.com/libp2p/go-buffer-pool v0.0.2
 github.com/libp2p/go-buffer-pool
 # github.com/libp2p/go-libp2p-core v0.6.1
@@ -201,6 +170,8 @@ github.com/rs/zerolog/internal/json
 github.com/spacemonkeygo/spacelog
 # github.com/spaolacci/murmur3 v1.1.0
 github.com/spaolacci/murmur3
+# github.com/stretchr/objx v0.2.0
+## explicit
 # github.com/whyrusleeping/cbor-gen v0.0.0-20200123233031-1cdf64d27158
 github.com/whyrusleeping/cbor-gen
 # go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.12.0
@@ -255,7 +226,6 @@ go.uber.org/zap/internal/exit
 go.uber.org/zap/zapcore
 # golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9
 golang.org/x/crypto/blake2s
-golang.org/x/crypto/pbkdf2
 golang.org/x/crypto/sha3
 # golang.org/x/net v0.0.0-20200822124328-c89045814202
 golang.org/x/net/http/httpguts
@@ -272,19 +242,10 @@ golang.org/x/sys/internal/unsafeheader
 golang.org/x/sys/unix
 golang.org/x/sys/windows
 # golang.org/x/text v0.3.3
-golang.org/x/text/cases
-golang.org/x/text/internal
-golang.org/x/text/internal/language
-golang.org/x/text/internal/language/compact
-golang.org/x/text/internal/tag
-golang.org/x/text/language
-golang.org/x/text/runes
 golang.org/x/text/secure/bidirule
-golang.org/x/text/secure/precis
 golang.org/x/text/transform
 golang.org/x/text/unicode/bidi
 golang.org/x/text/unicode/norm
-golang.org/x/text/width
 # golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1
 golang.org/x/xerrors
 golang.org/x/xerrors/internal

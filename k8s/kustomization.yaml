@@ -5,8 +5,8 @@ commonLabels:
   app.kubernetes.io/managed-by: kustomize
 namespace: apps
 resources:
-  - cert.yaml
   - deployment.k8s.yaml
+  - volume.k8s.yaml
 images:
   - name: us.gcr.io/com-seankhliao/ipgomod
     newName: reg.seankhliao.com/ipgomod

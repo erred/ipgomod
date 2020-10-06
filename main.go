@@ -31,7 +31,6 @@ func run() int {
 	fs := flag.NewFlagSet(os.Args[0], flag.ExitOnError)
 	lo.Flags(fs)
 	fs.StringVar(&APIURL, "api", IpfsURL, "api endpoint")
-	fs.StringVar(&dsn, "db", "", "connection string for pgx")
 	fs.Parse(os.Args[1:])
 
 	log := lo.Logger(true)
@@ -45,7 +44,7 @@ func run() int {
 	}
 
 	dbstore := &DBStore{
-		log: log.With().Str("module", "DBStore").Logger(),
+		dir: "/data",
 	}
 
 	crawler := &IndexCrawler{

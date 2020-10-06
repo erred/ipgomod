@@ -45,6 +45,7 @@ func run() int {
 
 	dbstore := &DBStore{
 		dir: "/data",
+		log: log.With().Str("module", "DBStore").Logger(),
 	}
 
 	crawler := &IndexCrawler{
@@ -77,6 +78,7 @@ func run() int {
 	if err != nil {
 		log.Error().Err(err).Msg("setup db")
 	}
+	log.Info().Str("ts", ts).Msg("initial timestamo")
 
 	go crawler.Crawl(ctx, ts)
 	go loader.Run(ctx, ParallelLimit)

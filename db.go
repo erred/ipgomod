@@ -7,12 +7,15 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
+
+	"github.com/rs/zerolog"
 )
 
 type DBStore struct {
 	dir string
 	w   *csv.Writer
 	ch  chan []FileHash
+	log zerolog.Logger
 }
 
 func (d *DBStore) Latest(ctx context.Context, ts string) error {
@@ -27,7 +30,10 @@ func (d *DBStore) AddFiles(ctx context.Context, fhs []FileHash) error {
 func (d *DBStore) adder(ctx context.Context) {
 	for fhs := range d.ch {
 		for _, fh := range fhs {
-			d.w.Write([]string{fh.Module, fh.Version, fh.File, fh.CID})
+			err := d.w.Write([]string{fh.Module, fh.Version, fh.File, fh.CID})
+			if err != nil {
+				d.log.Error().Err(err).Msg("write record")
+			}
 		}
 	}
 }
@@ -39,6 +45,6 @@ func (d *DBStore) Setup(ctx context.Context, dsn string) (timestamp string, err 
 		return "", fmt.Errorf("Setup: open file cid.csv: %w", err)
 	}
 	d.w = csv.NewWriter(f)
-	b, err := ioutil.ReadFile(filepath.Join(d.dir, "latest"))
-	return string(b), err
+	b, _ := ioutil.ReadFile(filepath.Join(d.dir, "latest"))
+	return string(b), nil
 }

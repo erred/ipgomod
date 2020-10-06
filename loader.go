@@ -88,26 +88,24 @@ func (l *Loader) processIR(ctx context.Context, ir IndexRecord) {
 	// }()
 
 	var fhs []FileHash
+	p, err := l.api.Unixfs().Add(ctx, files.NewReaderFile(zipbuf), options.Unixfs.Pin(false))
+	if err != nil {
+		l.log.Error().Err(err).Str("mod", ir.Path).Str("ver", ir.Version).Msg("add unixfs zip")
+		return
+	}
+	fhs = append(fhs, FileHash{
+		Module:  ir.Path,
+		Version: ir.Version,
+		File:    "",
+		CID:     p.Cid().String(),
+	})
+
 	for _, zf := range zr.File {
 		rc, err := zf.Open()
 		if err != nil {
 			l.log.Error().Err(err).Str("mod", ir.Path).Str("ver", ir.Version).Str("file", zf.Name).Msg("open zip file")
 			continue
 		}
-		// fp := filepath.Join(dir, zf.Name)
-		// os.MkdirAll(filepath.Dir(fp), 0o755)
-		// f, err := os.Create(fp)
-		// if err != nil {
-		// 	l.log.Error().Err(err).Str("mod", ir.Path).Str("ver", ir.Version).Str("file", zf.Name).Str("path", fp).Msg("create file")
-		// 	continue
-		// }
-		// _, err = io.Copy(f, rc)
-		// f.Close()
-		// rc.Close()
-		// if err != nil {
-		// 	l.log.Error().Err(err).Str("mod", ir.Path).Str("ver", ir.Version).Str("file", zf.Name).Str("path", fp).Msg("write file")
-		// 	continue
-		// }
 
 		p, err := l.api.Unixfs().Add(ctx, files.NewReaderFile(rc), options.Unixfs.Pin(true))
 		if err != nil {

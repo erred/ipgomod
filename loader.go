@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"sync"
 
+	files "github.com/ipfs/go-ipfs-files"
 	httpapi "github.com/ipfs/go-ipfs-http-client"
 	"github.com/ipfs/interface-go-ipfs-core/options"
 	"github.com/rs/zerolog"
@@ -63,25 +64,16 @@ func (l *Loader) processIR(ctx context.Context, ir IndexRecord) {
 		l.log.Error().Err(err).Str("url", zipURL).Msg("get zip")
 		return
 	}
+	defer res.Body.Close()
+	if res.StatusCode != 200 {
+		l.log.Error().Int("code", res.StatusCode).Str("status", res.Status).Msg("proxy response")
+		return
+	}
 	_, err = zipbuf.ReadFrom(res.Body)
-	res.Body.Close()
 	if err != nil {
 		l.log.Error().Err(err).Str("url", zipURL).Msg("read body")
 		return
 	}
-
-	var fhs []FileHash
-	p, err := l.api.Object().Put(ctx, zipbuf, options.Object.Pin(false))
-	if err != nil {
-		l.log.Error().Err(err).Msg("put zip")
-		return
-	}
-	fhs = append(fhs, FileHash{
-		Module:  ir.Path,
-		Version: ir.Version,
-		File:    "",
-		CID:     p.Cid().String(),
-	})
 
 	zr, err := zip.NewReader(bytes.NewReader(zipbuf.Bytes()), int64(zipbuf.Len()))
 	if err != nil {
@@ -89,33 +81,37 @@ func (l *Loader) processIR(ctx context.Context, ir IndexRecord) {
 		return
 	}
 
-	filebuf, ok := l.pool.Get().(*bytes.Buffer)
-	if !ok {
-		l.log.Error().Str("type", fmt.Sprintf("%T", filebuf)).Msg("assert pool *bytes.Buffer")
-		return
-	}
-	defer func() {
-		filebuf.Reset()
-		l.pool.Put(filebuf)
-	}()
+	// dir := fmt.Sprintf("%s/@v/%s", ir.Path, ir.Version)
+	// os.MkdirAll(dir, 0o755)
+	// defer func() {
+	// 	os.RemoveAll(dir)
+	// }()
 
+	var fhs []FileHash
 	for _, zf := range zr.File {
 		rc, err := zf.Open()
 		if err != nil {
 			l.log.Error().Err(err).Str("mod", ir.Path).Str("ver", ir.Version).Str("file", zf.Name).Msg("open zip file")
 			continue
 		}
-		filebuf.Reset()
-		_, err = filebuf.ReadFrom(rc)
-		rc.Close()
-		if err != nil {
-			l.log.Error().Err(err).Str("mod", ir.Path).Str("ver", ir.Version).Str("file", zf.Name).Msg("read zip file")
-			continue
-		}
+		// fp := filepath.Join(dir, zf.Name)
+		// os.MkdirAll(filepath.Dir(fp), 0o755)
+		// f, err := os.Create(fp)
+		// if err != nil {
+		// 	l.log.Error().Err(err).Str("mod", ir.Path).Str("ver", ir.Version).Str("file", zf.Name).Str("path", fp).Msg("create file")
+		// 	continue
+		// }
+		// _, err = io.Copy(f, rc)
+		// f.Close()
+		// rc.Close()
+		// if err != nil {
+		// 	l.log.Error().Err(err).Str("mod", ir.Path).Str("ver", ir.Version).Str("file", zf.Name).Str("path", fp).Msg("write file")
+		// 	continue
+		// }
 
-		p, err := l.api.Object().Put(ctx, filebuf, options.Object.Pin(true))
+		p, err := l.api.Unixfs().Add(ctx, files.NewReaderFile(rc), options.Unixfs.Pin(true))
 		if err != nil {
-			l.log.Error().Err(err).Msg("put zip")
+			l.log.Error().Err(err).Msg("add unixfs file")
 			return
 		}
 		fhs = append(fhs, FileHash{

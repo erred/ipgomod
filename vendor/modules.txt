@@ -51,6 +51,7 @@ github.com/ipfs/go-ipfs-ds-help
 # github.com/ipfs/go-ipfs-exchange-interface v0.0.1
 github.com/ipfs/go-ipfs-exchange-interface
 # github.com/ipfs/go-ipfs-files v0.0.8
+## explicit
 github.com/ipfs/go-ipfs-files
 # github.com/ipfs/go-ipfs-http-client v0.1.0
 ## explicit

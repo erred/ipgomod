@@ -30,7 +30,7 @@ func (d *DBStore) Latest(ctx context.Context, ts string) error {
 func (d *DBStore) AddFiles(ctx context.Context, fhs []FileHash) error {
 	var b pgx.Batch
 	for _, fh := range fhs {
-		b.Queue(`INSERT INTO hashes (module, version, file, cid) VALUES ($1, $2, $3, $3)`, fh.Module, fh.Version, fh.File, fh.CID)
+		b.Queue(`INSERT INTO hashes (module, version, file, cid) VALUES ($1, $2, $3, $4)`, fh.Module, fh.Version, fh.File, fh.CID)
 	}
 	err := ExecuteTx(ctx, d.pool, pgx.TxOptions{}, func(tx pgx.Tx) error {
 		_, err := tx.SendBatch(ctx, &b).Exec()
